@@ -12,14 +12,14 @@ tags:
 # Windows机器
 这是我在公司的机器，本来以为不同系统会很麻烦，弄完发现一点也不麻烦。
 
-### 在github上新建远程仓库
+## 在github上新建远程仓库
 
 将原来的page项目删除，新建一个和原来名字一样的空项目。<font color=red size=3>不用初始化README.md</font>
  此时只有一个空的master分支。
 
 
 
-### 本地初始化一个Hexo项目
+## 本地初始化一个Hexo项目
 <font color=red size=3>注意：本地的目录不要动</font>
 
 重新新建一个空目录，作为你的博客目录。进入该目录，右击Git bash here，初始化一个Hexo项目：
@@ -31,7 +31,7 @@ npm install hexo-deployer-git --save
 然后用自己原来博客里的文件替换掉这里的**source\, scaffolds\, themes\,_config.yml**替换成自己原来博客里的。
 <font color=red size=3>注意，这里把**themes/next**中的**.git/**目录删除</font>
 
-### 将整个目录推送到master
+## 将整个目录推送到master
 
 要推送到master分支，首先要将该目录初始化为本地Git仓库：
 
@@ -56,7 +56,7 @@ git push origin master
 
  
 
-### 在github上新建一个分支
+## 在github上新建一个分支
 
     1.创建本地分支
      
@@ -82,7 +82,7 @@ git push origin master
 
 
 
-### 部署博客
+## 部署博客
 
 还是和以前一样：
 
@@ -97,7 +97,7 @@ git push origin master
 
  
 
-### 关联到远程hexo分支
+## 关联到远程hexo分支
 
 如果有修改的话 ,在本地新建一个hexo分支别忘了，要推送到hexo分支上去：
 
@@ -110,6 +110,7 @@ git push origin master
  
 
 # MAC机器
+
 
 个人PC上的工作已经完成了，下面讲一下如果你换到了另外一台电脑上，应该如何操作。
 
@@ -135,21 +136,21 @@ git clone xxx
 
     hexo g -d
 
-## **推送到hexo分支**
+## 推送到hexo分支
 
     git add .
     git commit -m "add work PC test"
     git push origin hexo
 
-## **部署到master分支**
+## 部署到master分支
 
     hexo g -d
 
-# **日常操作**
+# 日常操作
 
 如果上面的过程都操作无误的话，你就可以在任何能联网的电脑上写博客啦。一般写博客的流程是下面这样。
 
-## **写博客前**
+## 写博客前
 
 不管你本地的仓库是否是最新的，都先pull一下，以防万一：
 
@@ -159,12 +160,12 @@ git clone xxx
 
 把最新的pull下来，再开始撰写新的博客。
 
-## **写博客**
+## 写博客
 
 hexo new "title"
 然后打开source/_posts/title.md，撰写博文。
 
-## **写完博客**
+## 写完博客
 
 先推送到hexo分支上：
 
@@ -172,7 +173,7 @@ hexo new "title"
     git commit -m "add article xxx"
     git push origin hexo
 
-## **最后部署到master分支上**
+## 最后部署到master分支上
 
     hexo g -d
 
