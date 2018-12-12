@@ -81,6 +81,7 @@ theme: hexo-theme-next
 deploy:
   type: git
   repo: git@github.com:mengjava/mengjava.github.io.git
+  branch: master
   
  
  # RSS订阅
