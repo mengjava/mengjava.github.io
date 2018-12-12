@@ -1,5 +1,5 @@
 ---
-title: work for mac
+title: 如何在mac和Windows上同时写hexo博客？
 date: 2018-12-12 21:32:24
 categories: 
 - 博客搭建
