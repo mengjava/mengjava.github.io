@@ -1,5 +1,5 @@
 ---
-title: 如何在mac和Windows上同时写Hexo博客？
+title: 如何在Mac和Windows上同时写Hexo博客？
 date: 2018-12-12 21:32:24
 categories: 
 - 博客搭建
@@ -10,6 +10,7 @@ tags:
 首先，我是在公司上的windows机器上部署了hexo，但是回家后发现很不方便，家里的电脑是mac机。所以根据网上的经验我总结了一下如何在mac和Windows上同时写hexo博客。
 
 # Windows机器
+这是我在公司的机器，本来以为不同系统会很麻烦，弄完发现一点也不麻烦。
 
 ### 在github上新建远程仓库
 
