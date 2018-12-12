@@ -1,11 +1,11 @@
 ---
-title: 如何在mac和Windows上同时写hexo博客？
+title: 如何在mac和Windows上同时写Hexo博客？
 date: 2018-12-12 21:32:24
 categories: 
 - 博客搭建
 tags:
 - 博客
-- hexo
+- Hexo
 ---
 首先，我是在公司上的windows机器上部署了hexo，但是回家后发现很不方便，家里的电脑是mac机。所以根据网上的经验我总结了一下如何在mac和Windows上同时写hexo博客。
 
@@ -81,7 +81,7 @@ git push origin master
 
 
 
-# 部署博客
+### 部署博客
 
 还是和以前一样：
 
@@ -112,7 +112,9 @@ git push origin master
 
 个人PC上的工作已经完成了，下面讲一下如果你换到了另外一台电脑上，应该如何操作。
 
-将博客项目克隆下来: git clone xxx
+## 将博客项目克隆下来
+
+git clone xxx
 
 克隆下来的仓库可能是master分支（**我已经设置hexo为默认分支了 但是clone下来还是master分支**）这时候需要切换一下分支，所以可以在这基础上继续写博客了。
 
@@ -128,24 +130,26 @@ git push origin master
     npm install
     npm install hexo-deployer-git --save
 
-**新建一篇文章测试**
+## 新建一篇文章测试
 
     hexo g -d
 
-**推送到hexo分支**
+## **推送到hexo分支**
 
     git add .
     git commit -m "add work PC test"
     git push origin hexo
 
-**部署到master分支**
+## **部署到master分支**
 
     hexo g -d
 
-**日常操作**
+# **日常操作**
+
 如果上面的过程都操作无误的话，你就可以在任何能联网的电脑上写博客啦。一般写博客的流程是下面这样。
 
-**写博客前**
+## **写博客前**
+
 不管你本地的仓库是否是最新的，都先pull一下，以防万一：
 
     git pull origin hexo
@@ -154,12 +158,12 @@ git push origin master
 
 把最新的pull下来，再开始撰写新的博客。
 
-**写博客**
+## **写博客**
 
 hexo new "title"
 然后打开source/_posts/title.md，撰写博文。
 
-**写完博客**
+## **写完博客**
 
 先推送到hexo分支上：
 
@@ -167,7 +171,7 @@ hexo new "title"
     git commit -m "add article xxx"
     git push origin hexo
 
-**最后部署到master分支上**
+## **最后部署到master分支上**
 
     hexo g -d
 
@@ -175,6 +179,9 @@ hexo new "title"
 
 
 --------------------- 
+
+
+
 
 
 
