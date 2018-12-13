@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[如何在Mac和Windows上同时写Hexo博客？]]></title>
+    <url>%2F2018%2F12%2F12%2F%E5%A6%82%E4%BD%95%E5%9C%A8mac%E5%92%8CWindows%E4%B8%8A%E5%90%8C%E6%97%B6%E5%86%99hexo%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[首先，我是在公司上的windows机器上部署了hexo，但是回家后发现很不方便，家里的电脑是mac机。所以根据网上的经验我总结了一下如何在mac和Windows上同时写hexo博客。 Windows机器这是我在公司的机器，本来以为不同系统会很麻烦，弄完发现一点也不麻烦。 在github上新建远程仓库将原来的page项目删除，新建一个和原来名字一样的空项目。不用初始化README.md 此时只有一个空的master分支。 本地初始化一个Hexo项目注意：本地的目录不要动 重新新建一个空目录，作为你的博客目录。进入该目录，右击Git bash here，初始化一个Hexo项目：123hexo initnpm installnpm install hexo-deployer-git --save 然后用自己原来博客里的文件替换掉这里的source\, scaffolds\, themes\,_config.yml替换成自己原来博客里的。 注意，这里把themes/next中的.git/目录删除 将整个目录推送到master要推送到master分支，首先要将该目录初始化为本地Git仓库： 123456git init//把博客目录下所有文件推送到master分支git remote add origin xxgit add .git commit -m &quot;first add hexo source code&quot;git push origin master 注意：如果不小心初始化了README.md 在执行 git push origin master 会失败.。此时先执行以下命令进行代码合并 1git push origin master 在github上新建一个分支1.创建本地分支 git branch 分支名，例如：git branch hexo 2.切换本地分支 git checkout 分支名，例如从master切换到分支：git checkout hexo 3.远程分支就是本地分支push到服务器上。比如master就是一个最典型的远程分支（默认）。 git push origin hexo 4.设置默认分支 git branch --set-upstream-to=origin/hexo hexo 新建一个分支hexo(名字可以自定义)，这时候hexo分支和master分支的内容一样，都是hexo的源文件。并把hexo设为默认分支，这样的话在另外一台机器上克隆下来就直接进入hexo分支，并且以后所有操作都是在hexo分支下完成。 为什么需要这个额外的分支呢？ 因为hexo d只把静态网页文件部署到master分支上，所以你换了另外一台电脑，就无法pull下来继续写博客了。有了hexo分支的话，就可以把hexo分支中的源文件(配置文件、主题样式等)pull下来，再hexo g的话就可以生成一模一样的静态文件了 部署博客还是和以前一样： 1. hexo g -d 如果提示 RROR Deployer not found: git 说明前面 npm install --save hexo-deployer-git 没有执行成功 再执行一次 2. npm install --save hexo-deployer-git 博客已经成功部署到master分支，这时候到github查看两个分支的内容，hexo分支里是源文件，master里是静态文件 注意：根目录下的_config.yml配置文件中branch一定要填master，否则hexo d就会部署到hexo分支下。 关联到远程hexo分支如果有修改的话 ,在本地新建一个hexo分支别忘了，要推送到hexo分支上去： git add . git commit -m &quot;&quot; git push origin hexo 这样才能在另外的机器上pull下来，保持同步 MAC机器个人PC上的工作已经完成了，下面讲一下如果你换到了另外一台电脑上，应该如何操作。 将博客项目克隆下来git clone xxx 克隆下来的仓库可能是master分支（我已经设置hexo为默认分支了 但是clone下来还是master分支）这时候需要切换一下分支，所以可以在这基础上继续写博客了。 #查看所有分支 git branch -a #切换分支 git checkout hexo 但是由于.gitignore文件中过滤了node_modules\，所以克隆下来的目录里没有node_modules\，这是hexo所需要的组件，所以要在该目录中重新安装hexo，但不需要hexo init。 npm install hexo npm install npm install hexo-deployer-git --save 新建一篇文章测试hexo g -d 推送到hexo分支git add . git commit -m &quot;add work PC test&quot; git push origin hexo 部署到master分支hexo g -d 日常操作如果上面的过程都操作无误的话，你就可以在任何能联网的电脑上写博客啦。一般写博客的流程是下面这样。 写博客前不管你本地的仓库是否是最新的，都先pull一下，以防万一： git pull origin hexo 把最新的pull下来，再开始撰写新的博客。 写博客hexo new “title”然后打开source/_posts/title.md，撰写博文。 写完博客先推送到hexo分支上： git add . git commit -m &quot;add article xxx&quot; git push origin hexo 最后部署到master分支上hexo g -d 整个流程大概就是这样。 再次回到Windows机器等我再次回到Windows机器上的时候,我git pull下最新的代码,但是提示我如下错误 $ hexo g ERROR Local hexo not found in E:\Hexo ERROR Try running: &apos;npm install hexo --save&apos; 这个时候你需要:1.删除node_modules文件夹2.执行一下代码 npm install 然后在执行 hexo g -d 3.原因 .gitignore文件里面忽略了node_modules文件夹，所以这个文件夹没有更新上去。所以用npm重新安装即可。]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[my new post]]></title>
+    <url>%2F2018%2F12%2F12%2Ftest%2F</url>
+    <content type="text"><![CDATA[正文Java语言提供了很多修饰符，大概分为两类： 访问权限修饰符 非访问权限修饰符 访问权限修饰符]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[my new post]]></title>
+    <url>%2F2018%2F12%2F12%2Fmy-new-post%2F</url>
+    <content type="text"><![CDATA[正文Java语言提供了很多修饰符，大概分为两类： 访问权限修饰符 非访问权限修饰符 访问权限修饰符]]></content>
+      <categories>
+        <category>并发编程</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+        <tag>并发</tag>
+      </tags>
+  </entry>
+</search>
