@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="Mengyao Blog">
 <meta property="og:description" content="在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。 默认情况下ReentrantLock是通过非公平锁来进行同步的，包括synchronized关键字都是如此，因为这样性能会更好。因为从线程进入了Runnable状态，可以执">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T11:54:48.251Z">
+<meta property="og:updated_time" content="2018-12-17T12:12:04.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="公平锁与非公平锁">
 <meta name="twitter:description" content="在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。 默认情况下ReentrantLock是通过非公平锁来进行同步的，包括synchronized关键字都是如此，因为这样性能会更好。因为从线程进入了Runnable状态，可以执">
@@ -425,7 +425,7 @@
                 
               
 
-              <time title="创建时间：2018-12-17 19:33:20 / 修改时间：19:54:48" itemprop="dateCreated datePublished" datetime="2018-12-17T19:33:20+08:00">2018-12-17</time>
+              <time title="创建时间：2018-12-17 19:33:20 / 修改时间：20:12:04" itemprop="dateCreated datePublished" datetime="2018-12-17T19:33:20+08:00">2018-12-17</time>
             
 
             
@@ -483,17 +483,16 @@
       
         <p>在<strong>ReentrantLock</strong>中很明显可以看到其中同步包括两种，分别是公平的<strong>FairSync</strong> 和非公平的 <strong>NonfairSync</strong>。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。</p>
 <p>默认情况下<strong>ReentrantLock</strong>是通过非公平锁来进行同步的，包括<strong>synchronized</strong>关键字都是如此，因为这样性能会更好。因为从线程进入了<strong>Runnable</strong>状态，可以执行开始，到实际线程执行是要比较久的时间的。而且，在一个锁释放之后，其他的线程会需要重新来获取锁。其中经历了持有锁的线程释放锁，其他线程从挂起恢复到<strong>Runnable</strong>状态，其他线程请求锁，获得锁，线程执行，这一系列步骤。如果这个时候，存在一个线程直接请求锁，可能就避开挂起到恢复<strong>Runnable</strong>状态的这段消耗，所以性能更优化。<br><a id="more"></a></p>
-<pre><code>` /**
-     * Creates an instance of {@code ReentrantLock}.
-     * This is equivalent to using {@code ReentrantLock(false)}.
-    */
-    public ReentrantLock() {
-        sync = new NonfairSync();
-    }
-`
+<pre><code>/**
+ * Creates an instance of {@code ReentrantLock}.
+ * This is equivalent to using {@code ReentrantLock(false)}.
+ */
+
+public ReentrantLock() {
+    sync = new NonfairSync();
+}
 </code></pre><p>默认状态，使用的<strong>ReentrantLock</strong>()就是非公平锁。再参考如下代码，我们知道<strong>ReentrantLock</strong>的获取锁的操作是通过装饰模式代理给sync的。</p>
-<pre><code>`
-/**
+<pre><code>/**
  * Acquires the lock.
  *
  * &lt;p&gt;Acquires the lock if it is not held by another thread and returns
@@ -510,10 +509,8 @@
 public void lock() {
     sync.lock();
 }
-`
 </code></pre><p>下面参考一下<strong>FairSync</strong>和<strong>NonfairSync</strong>对lock方法的实现：</p>
-<pre><code>`
- /**
+<pre><code> /**
  * Sync object for non-fair locks
  */
 static final class NonfairSync extends Sync {
@@ -537,8 +534,6 @@ static final class FairSync extends Sync {
         acquire(1);
     }
 }
-
-`
 </code></pre><p>当使用非公平锁的时候，会立刻尝试配置状态，成功了就会插队执行，失败了就会和公平锁的机制一样，调用<strong>acquire()</strong>方法，以排他的方式来获取锁，成功了立刻返回，否则将线程加入队列，知道成功调用为止。</p>
 
       
