@@ -401,7 +401,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/17/公平锁与非公平锁/" class="post-title-link" itemprop="http://yoursite.com/index.html">公平锁与非公平锁</a>
+                <a href="/2018/12/17/公平锁与非公平锁/" class="post-title-link" itemprop="http://yoursite.com/index.html">未命名</a>
               
             
           </h1>
@@ -426,7 +426,7 @@
                 
               
 
-              <time title="创建时间：2018-12-17 19:33:20 / 修改时间：20:12:04" itemprop="dateCreated datePublished" datetime="2018-12-17T19:33:20+08:00">2018-12-17</time>
+              <time title="创建时间：2018-12-17 19:33:20 / 修改时间：20:32:20" itemprop="dateCreated datePublished" datetime="2018-12-17T19:33:20+08:00">2018-12-17</time>
             
 
             
@@ -436,24 +436,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/并发编程/" itemprop="url" rel="index"><span itemprop="name">并发编程</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -483,8 +465,18 @@
 
       
         
-          <p>在<strong>ReentrantLock</strong>中很明显可以看到其中同步包括两种，分别是公平的<strong>FairSync</strong> 和非公平的 <strong>NonfairSync</strong>。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。</p>
-<p>默认情况下<strong>ReentrantLock</strong>是通过非公平锁来进行同步的，包括<strong>synchronized</strong>关键字都是如此，因为这样性能会更好。因为从线程进入了<strong>Runnable</strong>状态，可以执行开始，到实际线程执行是要比较久的时间的。而且，在一个锁释放之后，其他的线程会需要重新来获取锁。其中经历了持有锁的线程释放锁，其他线程从挂起恢复到<strong>Runnable</strong>状态，其他线程请求锁，获得锁，线程执行，这一系列步骤。如果这个时候，存在一个线程直接请求锁，可能就避开挂起到恢复<strong>Runnable</strong>状态的这段消耗，所以性能更优化。<br>
+          <p><link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  </p>
+<p><script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  </p>
+<h2 id="hljs-initHighlightingOnLoad"><a href="#hljs-initHighlightingOnLoad" class="headerlink" title="hljs.initHighlightingOnLoad();  "></a><script>hljs.initHighlightingOnLoad();</script>  </h2><p>title: 公平锁与非公平锁<br>date: 2018-12-17 19:33:20<br>categories: </p>
+<ul>
+<li>并发编程<br>tags:</li>
+<li>公平锁</li>
+<li>非公平锁</li>
+</ul>
+<hr>
+<p>在<strong>ReentrantLock</strong>中很明显可以看到其中同步包括两种，分别是公平的<strong>FairSync</strong> 和非公平的 <strong>NonfairSync</strong>。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。</p>
+<pre><code>sync = new NonfairSync();
+</code></pre><p>默认情况下<strong>ReentrantLock</strong>是通过非公平锁来进行同步的，包括<strong>synchronized</strong>关键字都是如此，因为这样性能会更好。因为从线程进入了<strong>Runnable</strong>状态，可以执行开始，到实际线程执行是要比较久的时间的。而且，在一个锁释放之后，其他的线程会需要重新来获取锁。其中经历了持有锁的线程释放锁，其他线程从挂起恢复到<strong>Runnable</strong>状态，其他线程请求锁，获得锁，线程执行，这一系列步骤。如果这个时候，存在一个线程直接请求锁，可能就避开挂起到恢复<strong>Runnable</strong>状态的这段消耗，所以性能更优化。<br>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -774,7 +766,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -795,7 +787,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
