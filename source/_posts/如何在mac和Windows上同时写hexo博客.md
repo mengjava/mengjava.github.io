@@ -11,7 +11,7 @@ tags:
 
 # Windows机器
 这是我在公司的机器，本来以为不同系统会很麻烦，弄完发现一点也不麻烦。
-
+<!--more-->
 ## 在github上新建远程仓库
 
 将原来的page项目删除，新建一个和原来名字一样的空项目。<font color=red size=3>不用初始化README.md</font>
@@ -179,6 +179,28 @@ hexo new "title"
 
 整个流程大概就是这样。
 
+# 再次回到Windows机器
+
+等我再次回到Windows机器上的时候,我git pull下最新的代码,但是提示我如下错误
+    
+
+    $ hexo g
+    ERROR Local hexo not found in E:\Hexo
+    ERROR Try running: 'npm install hexo --save'
+
+这个时候你需要:
+1.**删除node_modules文件夹**
+2.**执行一下代码**
+
+    npm install
+然后在执行
+
+
+     hexo g -d
+
+3.**原因**
+
+.gitignore文件里面忽略了node_modules文件夹，所以这个文件夹没有更新上去。所以用npm重新安装即可。
 
 --------------------- 
 
