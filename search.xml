@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[face++]]></title>
+    <url>%2F2018%2F12%2F24%2Fface%2F</url>
+    <content type="text"><![CDATA[官方API地址为: https://console.faceplusplus.com.cn/documents/5671706首先创建自己的账号 生成api_key api_secret 具体代码如下123456789101112131415161718public String ocrVehicleLicenseOrMergeFace(@RequestParam(&quot;imageUrl&quot;) String imageUrl,@RequestParam(&quot;group&quot;) String group,@RequestParam(&quot;type&quot;) Integer type) throws IOException &#123; String image_url=FILE_INNER_URL+group+&quot;/&quot;+imageUrl; CloseableHttpClient httpClient = HttpClients.createDefault(); HttpPost uploadFile = new HttpPost(LICENSE_URL); MultipartEntityBuilder builder = MultipartEntityBuilder.create(); builder.addTextBody(&quot;api_key&quot;, API_KEY, ContentType.TEXT_PLAIN); builder.addTextBody(&quot;api_secret&quot;, API_SECRET, ContentType.TEXT_PLAIN); builder.addTextBody(&quot;image_url&quot;, image_url, ContentType.TEXT_PLAIN); // 把文件加到HTTP的post请求中 HttpEntity multipart = builder.build(); uploadFile.setEntity(multipart); CloseableHttpResponse response = httpClient.execute(uploadFile); HttpEntity responseEntity = response.getEntity(); //转换值 String sResponse = EntityUtils.toString(responseEntity, &quot;UTF-8&quot;); LicenseResult licenseResult = JSONObject.parseObject(sResponse, LicenseResult.class); return JSONUtil.toJsonStringSUSSESS(&quot;查询成功&quot;, licenseResult); &#125;]]></content>
+      <categories>
+        <category>Face++</category>
+      </categories>
+      <tags>
+        <tag>行驶证OCR识别</tag>
+        <tag>Face++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[公平锁与非公平锁]]></title>
     <url>%2F2018%2F12%2F17%2F%E5%85%AC%E5%B9%B3%E9%94%81%E4%B8%8E%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81%2F</url>
     <content type="text"><![CDATA[在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。 默认情况下ReentrantLock是通过非公平锁来进行同步的，包括synchronized关键字都是如此，因为这样性能会更好。因为从线程进入了Runnable状态，可以执行开始，到实际线程执行是要比较久的时间的。而且，在一个锁释放之后，其他的线程会需要重新来获取锁。其中经历了持有锁的线程释放锁，其他线程从挂起恢复到Runnable状态，其他线程请求锁，获得锁，线程执行，这一系列步骤。如果这个时候，存在一个线程直接请求锁，可能就避开挂起到恢复Runnable状态的这段消耗，所以性能更优化。1234567/** * Creates an instance of &#123;@code ReentrantLock&#125;. * This is equivalent to using &#123;@code ReentrantLock(false)&#125;. */public ReentrantLock() &#123; sync = new NonfairSync();&#125; 默认状态，使用的ReentrantLock()就是非公平锁。再参考如下代码，我们知道ReentrantLock的获取锁的操作是通过装饰模式代理给sync的。 1234567891011121314151617/** * Acquires the lock. * * &lt;p&gt;Acquires the lock if it is not held by another thread and returns * immediately, setting the lock hold count to one. * * &lt;p&gt;If the current thread already holds the lock then the hold * count is incremented by one and the method returns immediately. * * &lt;p&gt;If the lock is held by another thread then the * current thread becomes disabled for thread scheduling * purposes and lies dormant until the lock has been acquired, * at which time the lock hold count is set to one. */public void lock() &#123; sync.lock();&#125; 下面参考一下FairSync和NonfairSync对lock方法的实现： 12345678910111213141516171819202122232425/** * Sync object for non-fair locks */static final class NonfairSync extends Sync &#123; /** * Performs lock. Try immediate barge, backing up to normal * acquire on failure. */ final void lock() &#123; if (compareAndSetState(0, 1)) setExclusiveOwnerThread(Thread.currentThread()); else acquire(1); &#125;&#125;/** * Sync object for fair locks */static final class FairSync extends Sync &#123; final void lock() &#123; acquire(1); &#125;&#125; 当使用非公平锁的时候，会立刻尝试配置状态，成功了就会插队执行，失败了就会和公平锁的机制一样，调用acquire()方法，以排他的方式来获取锁，成功了立刻返回，否则将线程加入队列，知道成功调用为止。]]></content>

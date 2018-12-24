@@ -381,6 +381,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/face/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mengyao">
+      <meta itemprop="description" content="一个回头的人是一个选择过的人，复生了的人，新的人">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mengyao Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/24/face/" class="post-title-link" itemprop="http://yoursite.com/index.html">face++</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-24 17:42:30 / 修改时间：17:42:55" itemprop="dateCreated datePublished" datetime="2018-12-24T17:42:30+08:00">2018-12-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Face/" itemprop="url" rel="index"><span itemprop="name">Face++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>官方API地址为: <a href="https://console.faceplusplus.com.cn/documents/5671706" target="_blank" rel="noopener">https://console.faceplusplus.com.cn/documents/5671706</a><br>首先创建自己的账号 生成<strong>api_key</strong>  <strong>api_secret</strong><br><img src="https://img-blog.csdnimg.cn/20181224171904900.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmp1bmd1YTgxNDQ=,size_16,color_FFFFFF,t_70" alt="请求参数"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181224172011968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmp1bmd1YTgxNDQ=,size_16,color_FFFFFF,t_70" alt="返回值说明"><br>具体代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public String ocrVehicleLicenseOrMergeFace(@RequestParam(&quot;imageUrl&quot;) String imageUrl,@RequestParam(&quot;group&quot;) String group,@RequestParam(&quot;type&quot;) Integer type) throws IOException &#123;</span><br><span class="line">		String image_url=FILE_INNER_URL+group+&quot;/&quot;+imageUrl;</span><br><span class="line">		CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line">		HttpPost uploadFile = new HttpPost(LICENSE_URL);</span><br><span class="line">		MultipartEntityBuilder builder = MultipartEntityBuilder.create();</span><br><span class="line">		builder.addTextBody(&quot;api_key&quot;, API_KEY, ContentType.TEXT_PLAIN);</span><br><span class="line">		builder.addTextBody(&quot;api_secret&quot;, API_SECRET, ContentType.TEXT_PLAIN);</span><br><span class="line">		builder.addTextBody(&quot;image_url&quot;, image_url, ContentType.TEXT_PLAIN);</span><br><span class="line">		// 把文件加到HTTP的post请求中</span><br><span class="line">		HttpEntity multipart = builder.build();</span><br><span class="line">		uploadFile.setEntity(multipart);</span><br><span class="line">		CloseableHttpResponse  response = httpClient.execute(uploadFile);</span><br><span class="line">		HttpEntity responseEntity = response.getEntity();</span><br><span class="line">		//转换值</span><br><span class="line">		String sResponse = EntityUtils.toString(responseEntity, &quot;UTF-8&quot;);</span><br><span class="line">		LicenseResult licenseResult = JSONObject.parseObject(sResponse, LicenseResult.class);</span><br><span class="line">		return	JSONUtil.toJsonStringSUSSESS(&quot;查询成功&quot;, licenseResult);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/公平锁与非公平锁/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -769,7 +930,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -786,7 +947,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -807,7 +970,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
