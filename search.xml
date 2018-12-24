@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[face++]]></title>
+    <title><![CDATA[Face++行驶证OCR识别]]></title>
     <url>%2F2018%2F12%2F24%2Fface%2F</url>
     <content type="text"><![CDATA[官方API地址为: https://console.faceplusplus.com.cn/documents/5671706首先创建自己的账号 生成api_key api_secret 具体代码如下123456789101112131415161718public String ocrVehicleLicenseOrMergeFace(@RequestParam(&quot;imageUrl&quot;) String imageUrl,@RequestParam(&quot;group&quot;) String group,@RequestParam(&quot;type&quot;) Integer type) throws IOException &#123; String image_url=FILE_INNER_URL+group+&quot;/&quot;+imageUrl; CloseableHttpClient httpClient = HttpClients.createDefault(); HttpPost uploadFile = new HttpPost(LICENSE_URL); MultipartEntityBuilder builder = MultipartEntityBuilder.create(); builder.addTextBody(&quot;api_key&quot;, API_KEY, ContentType.TEXT_PLAIN); builder.addTextBody(&quot;api_secret&quot;, API_SECRET, ContentType.TEXT_PLAIN); builder.addTextBody(&quot;image_url&quot;, image_url, ContentType.TEXT_PLAIN); // 把文件加到HTTP的post请求中 HttpEntity multipart = builder.build(); uploadFile.setEntity(multipart); CloseableHttpResponse response = httpClient.execute(uploadFile); HttpEntity responseEntity = response.getEntity(); //转换值 String sResponse = EntityUtils.toString(responseEntity, &quot;UTF-8&quot;); LicenseResult licenseResult = JSONObject.parseObject(sResponse, LicenseResult.class); return JSONUtil.toJsonStringSUSSESS(&quot;查询成功&quot;, licenseResult); &#125;]]></content>
       <categories>
