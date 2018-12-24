@@ -1,6 +1,6 @@
 ---
-title:face++行驶证OCR识别
-date: 2018-12-17 21:32:24
+title: Face++行驶证OCR识别
+date: 2018-12-24 17:42:30
 categories: 
 - Face++
 tags:
@@ -10,6 +10,7 @@ tags:
 
 官方API地址为: https://console.faceplusplus.com.cn/documents/5671706
 首先创建自己的账号 生成**api_key**  **api_secret** 
+<!--more-->
 ![请求参数](https://img-blog.csdnimg.cn/20181224171904900.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hhbmp1bmd1YTgxNDQ=,size_16,color_FFFFFF,t_70)
 
 
