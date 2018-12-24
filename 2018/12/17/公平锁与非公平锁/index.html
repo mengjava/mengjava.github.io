@@ -104,17 +104,18 @@
 
 
 
-  <meta name="description" content="hljs.tabReplace = ‘ ‘;hljs.initHighlightingOnLoad(); title: 公平锁与非公平锁date: 2018-12-17 19:33:20categories:   并发编程tags: 公平锁 非公平锁   在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用">
+  <meta name="description" content="在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。 默认情况下ReentrantLock是通过非公平锁来进行同步的，包括synchronized关键字都是如此，因为这样性能会更好。因为从线程进入了Runnable状态，可以执">
+<meta name="keywords" content="公平锁,非公平锁">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mengyao Blog">
+<meta property="og:title" content="公平锁与非公平锁">
 <meta property="og:url" content="http://yoursite.com/2018/12/17/公平锁与非公平锁/index.html">
 <meta property="og:site_name" content="Mengyao Blog">
-<meta property="og:description" content="hljs.tabReplace = ‘ ‘;hljs.initHighlightingOnLoad(); title: 公平锁与非公平锁date: 2018-12-17 19:33:20categories:   并发编程tags: 公平锁 非公平锁   在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用">
+<meta property="og:description" content="在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。 默认情况下ReentrantLock是通过非公平锁来进行同步的，包括synchronized关键字都是如此，因为这样性能会更好。因为从线程进入了Runnable状态，可以执">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T12:35:16.355Z">
+<meta property="og:updated_time" content="2018-12-24T09:34:18.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mengyao Blog">
-<meta name="twitter:description" content="hljs.tabReplace = ‘ ‘;hljs.initHighlightingOnLoad(); title: 公平锁与非公平锁date: 2018-12-17 19:33:20categories:   并发编程tags: 公平锁 非公平锁   在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用">
+<meta name="twitter:title" content="公平锁与非公平锁">
+<meta name="twitter:description" content="在ReentrantLock中很明显可以看到其中同步包括两种，分别是公平的FairSync 和非公平的 NonfairSync。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。 默认情况下ReentrantLock是通过非公平锁来进行同步的，包括synchronized关键字都是如此，因为这样性能会更好。因为从线程进入了Runnable状态，可以执">
 
 
 
@@ -133,7 +134,7 @@
   };
 </script>
 
-  <title> | Mengyao Blog</title>
+  <title>公平锁与非公平锁 | Mengyao Blog</title>
   
 
 
@@ -398,7 +399,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">公平锁与非公平锁
 
               
             
@@ -424,16 +425,46 @@
                 
               
 
-              <time title="创建时间：2018-12-17 19:33:20 / 修改时间：20:35:16" itemprop="dateCreated datePublished" datetime="2018-12-17T19:33:20+08:00">2018-12-17</time>
+              <time title="创建时间：2018-12-17 19:33:20" itemprop="dateCreated datePublished" datetime="2018-12-17T19:33:20+08:00">2018-12-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 17:34:18" itemprop="dateModified" datetime="2018-12-24T17:34:18+08:00">2018-12-24</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/并发编程/" itemprop="url" rel="index"><span itemprop="name">并发编程</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -462,70 +493,13 @@
       
 
       
-        <p><link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.css"></p>
-<p><script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script></p>
-<p><script><br>hljs.tabReplace = ‘ ‘;<br>hljs.initHighlightingOnLoad();</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></script></p><p>title: 公平锁与非公平锁<br>date: 2018-12-17 19:33:20<br>categories: </p>
-<ul>
-<li>并发编程<br>tags:</li>
-<li>公平锁</li>
-<li>非公平锁</li>
-</ul>
-<hr>
-<p>在<strong>ReentrantLock</strong>中很明显可以看到其中同步包括两种，分别是公平的<strong>FairSync</strong> 和非公平的 <strong>NonfairSync</strong>。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。</p>
-<pre><code>sync = new NonfairSync();
-</code></pre><p>默认情况下<strong>ReentrantLock</strong>是通过非公平锁来进行同步的，包括<strong>synchronized</strong>关键字都是如此，因为这样性能会更好。因为从线程进入了<strong>Runnable</strong>状态，可以执行开始，到实际线程执行是要比较久的时间的。而且，在一个锁释放之后，其他的线程会需要重新来获取锁。其中经历了持有锁的线程释放锁，其他线程从挂起恢复到<strong>Runnable</strong>状态，其他线程请求锁，获得锁，线程执行，这一系列步骤。如果这个时候，存在一个线程直接请求锁，可能就避开挂起到恢复<strong>Runnable</strong>状态的这段消耗，所以性能更优化。<br><a id="more"></a><br>    /**</p>
-<pre><code> * Creates an instance of {@code ReentrantLock}.
- * This is equivalent to using {@code ReentrantLock(false)}.
- */
-
-public ReentrantLock() {
-    sync = new NonfairSync();
-}
-</code></pre><p>默认状态，使用的<strong>ReentrantLock</strong>()就是非公平锁。再参考如下代码，我们知道<strong>ReentrantLock</strong>的获取锁的操作是通过装饰模式代理给sync的。</p>
-<pre><code>/**
- * Acquires the lock.
- *
- * &lt;p&gt;Acquires the lock if it is not held by another thread and returns
- * immediately, setting the lock hold count to one.
- *
- * &lt;p&gt;If the current thread already holds the lock then the hold
- * count is incremented by one and the method returns immediately.
- *
- * &lt;p&gt;If the lock is held by another thread then the
- * current thread becomes disabled for thread scheduling
- * purposes and lies dormant until the lock has been acquired,
- * at which time the lock hold count is set to one.
- */
-public void lock() {
-    sync.lock();
-}
-</code></pre><p>下面参考一下<strong>FairSync</strong>和<strong>NonfairSync</strong>对lock方法的实现：</p>
-<pre><code> /**
- * Sync object for non-fair locks
- */
-static final class NonfairSync extends Sync {
-    /**
-     * Performs lock.  Try immediate barge, backing up to normal
-     * acquire on failure.
-     */
-    final void lock() {
-        if (compareAndSetState(0, 1))
-            setExclusiveOwnerThread(Thread.currentThread());
-        else
-            acquire(1);
-    }
-}
-
-/**
- * Sync object for fair locks
- */
-static final class FairSync extends Sync {
-    final void lock() {
-        acquire(1);
-    }
-}
-</code></pre><p>当使用非公平锁的时候，会立刻尝试配置状态，成功了就会插队执行，失败了就会和公平锁的机制一样，调用<strong>acquire()</strong>方法，以排他的方式来获取锁，成功了立刻返回，否则将线程加入队列，知道成功调用为止。</p>
+        <p>在<strong>ReentrantLock</strong>中很明显可以看到其中同步包括两种，分别是公平的<strong>FairSync</strong> 和非公平的 <strong>NonfairSync</strong>。公平锁的作用就是严格按照线程启动的顺序来执行的，不允许其他线程插队执行的；而非公平锁是允许插队的。</p>
+<p>默认情况下<strong>ReentrantLock</strong>是通过非公平锁来进行同步的，包括<strong>synchronized</strong>关键字都是如此，因为这样性能会更好。因为从线程进入了<strong>Runnable</strong>状态，可以执行开始，到实际线程执行是要比较久的时间的。而且，在一个锁释放之后，其他的线程会需要重新来获取锁。其中经历了持有锁的线程释放锁，其他线程从挂起恢复到<strong>Runnable</strong>状态，其他线程请求锁，获得锁，线程执行，这一系列步骤。如果这个时候，存在一个线程直接请求锁，可能就避开挂起到恢复<strong>Runnable</strong>状态的这段消耗，所以性能更优化。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Creates an instance of &#123;@code ReentrantLock&#125;.</span><br><span class="line"> * This is equivalent to using &#123;@code ReentrantLock(false)&#125;.</span><br><span class="line"> */</span><br><span class="line">public ReentrantLock() &#123;</span><br><span class="line">   	sync = new NonfairSync();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>默认状态，使用的<strong>ReentrantLock</strong>()就是非公平锁。再参考如下代码，我们知道<strong>ReentrantLock</strong>的获取锁的操作是通过装饰模式代理给sync的。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Acquires the lock.</span><br><span class="line"> *</span><br><span class="line"> * &lt;p&gt;Acquires the lock if it is not held by another thread and returns</span><br><span class="line"> * immediately, setting the lock hold count to one.</span><br><span class="line"> *</span><br><span class="line"> * &lt;p&gt;If the current thread already holds the lock then the hold</span><br><span class="line"> * count is incremented by one and the method returns immediately.</span><br><span class="line"> *</span><br><span class="line"> * &lt;p&gt;If the lock is held by another thread then the</span><br><span class="line"> * current thread becomes disabled for thread scheduling</span><br><span class="line"> * purposes and lies dormant until the lock has been acquired,</span><br><span class="line"> * at which time the lock hold count is set to one.</span><br><span class="line"> */</span><br><span class="line">public void lock() &#123;</span><br><span class="line">    sync.lock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面参考一下<strong>FairSync</strong>和<strong>NonfairSync</strong>对lock方法的实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Sync object for non-fair locks</span><br><span class="line"> */</span><br><span class="line">static final class NonfairSync extends Sync &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Performs lock.  Try immediate barge, backing up to normal</span><br><span class="line">     * acquire on failure.</span><br><span class="line">     */</span><br><span class="line">    final void lock() &#123;</span><br><span class="line">        if (compareAndSetState(0, 1))</span><br><span class="line">            setExclusiveOwnerThread(Thread.currentThread());</span><br><span class="line">        else</span><br><span class="line">            acquire(1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Sync object for fair locks</span><br><span class="line"> */</span><br><span class="line">static final class FairSync extends Sync &#123;</span><br><span class="line">    final void lock() &#123;</span><br><span class="line">        acquire(1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当使用非公平锁的时候，会立刻尝试配置状态，成功了就会插队执行，失败了就会和公平锁的机制一样，调用<strong>acquire()</strong>方法，以排他的方式来获取锁，成功了立刻返回，否则将线程加入队列，知道成功调用为止。</p>
 
       
     </div>
@@ -546,6 +520,14 @@ static final class FairSync extends Sync {
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/公平锁/" rel="tag"># 公平锁</a>
+          
+            <a href="/tags/非公平锁/" rel="tag"># 非公平锁</a>
+          
+        </div>
       
 
       
@@ -644,7 +626,7 @@ static final class FairSync extends Sync {
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -665,7 +647,7 @@ static final class FairSync extends Sync {
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
