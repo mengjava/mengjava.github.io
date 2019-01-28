@@ -1,8 +1,8 @@
 ---
 title: Spring单例模式与线程安全
 date: 2019-01-28 18:55:46
-categories: spring
-- 
+categories: 
+- spring
 tags:
 - 单例模式
 - 线程安全
