@@ -104,18 +104,22 @@
 
 
 
-  <meta name="description" content="Serial 收集器（新生代）这是一个单线程的收集器，只会使用一个CPU或一条收集线程去完成垃圾收集工作，进行垃圾收集时，必须暂停其他所有的工作线程。实际使用场景：依然是虚拟机运行在Client模式下的默认新生代收集器。例如 用户桌面应用场景中，分配给虚拟机管理的内存不会很大，停顿时间在几十毫秒最多一百多毫秒以内，这点停顿是可以接受的。优点：简单高效，对于限定CPU的环境来说，Serial收集器没">
-<meta name="keywords" content="垃圾收集器">
+  <meta name="keywords" content="网络协议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.3 垃圾收集器">
-<meta property="og:url" content="http://yoursite.com/2019/04/01/3-3-垃圾收集器/index.html">
+<meta property="og:title" content="网络协议">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/网络协议/index.html">
 <meta property="og:site_name" content="Mengyao Blog">
-<meta property="og:description" content="Serial 收集器（新生代）这是一个单线程的收集器，只会使用一个CPU或一条收集线程去完成垃圾收集工作，进行垃圾收集时，必须暂停其他所有的工作线程。实际使用场景：依然是虚拟机运行在Client模式下的默认新生代收集器。例如 用户桌面应用场景中，分配给虚拟机管理的内存不会很大，停顿时间在几十毫秒最多一百多毫秒以内，这点停顿是可以接受的。优点：简单高效，对于限定CPU的环境来说，Serial收集器没">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-01T03:46:29.143Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/02/5d1af21417e8828921.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/07/01/5d196ac12803a57143.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/01/5d196c0d3cc7314966.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/01/5d197d162e16e43366.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/01/5d1983edbc30a14933.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/01/5d19a10a93e8417209.png">
+<meta property="og:updated_time" content="2019-07-02T06:05:04.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3.3 垃圾收集器">
-<meta name="twitter:description" content="Serial 收集器（新生代）这是一个单线程的收集器，只会使用一个CPU或一条收集线程去完成垃圾收集工作，进行垃圾收集时，必须暂停其他所有的工作线程。实际使用场景：依然是虚拟机运行在Client模式下的默认新生代收集器。例如 用户桌面应用场景中，分配给虚拟机管理的内存不会很大，停顿时间在几十毫秒最多一百多毫秒以内，这点停顿是可以接受的。优点：简单高效，对于限定CPU的环境来说，Serial收集器没">
+<meta name="twitter:title" content="网络协议">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/02/5d1af21417e8828921.jpg">
 
 
 
@@ -124,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/01/3-3-垃圾收集器/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/02/网络协议/">
 
 
 
@@ -134,7 +138,7 @@
   };
 </script>
 
-  <title>3.3 垃圾收集器 | Mengyao Blog</title>
+  <title>网络协议 | Mengyao Blog</title>
   
 
 
@@ -382,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/3-3-垃圾收集器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/02/网络协议/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mengyao">
@@ -399,7 +403,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">3.3 垃圾收集器
+          <h1 class="post-title" itemprop="name headline">网络协议
 
               
             
@@ -425,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2019-04-01 11:30:56 / 修改时间：11:46:29" itemprop="dateCreated datePublished" datetime="2019-04-01T11:30:56+08:00">2019-04-01</time>
+              <time title="创建时间：2019-07-02 14:02:33 / 修改时间：14:05:04" itemprop="dateCreated datePublished" datetime="2019-07-02T14:02:33+08:00">2019-07-02</time>
             
 
             
@@ -447,7 +451,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/JVM读书笔记/" itemprop="url" rel="index"><span itemprop="name">JVM读书笔记</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/网络协议/" itemprop="url" rel="index"><span itemprop="name">网络协议</span></a></span>
 
                 
                 
@@ -481,41 +485,62 @@
       
 
       
-        <h2 id="Serial-收集器（新生代）"><a href="#Serial-收集器（新生代）" class="headerlink" title="Serial 收集器（新生代）"></a>Serial 收集器（新生代）</h2><p>这是一个单线程的收集器，只会使用一个CPU或一条收集线程去完成垃圾收集工作，进行垃圾收集时，必须暂停其他所有的工作线程。<br><strong>实际使用场景</strong>：依然是虚拟机运行在Client模式下的默认新生代收集器。例如 用户桌面应用场景中，分配给虚拟机管理的内存不会很大，停顿时间在几十毫秒最多一百多毫秒以内，这点停顿是可以接受的。<br><strong>优点</strong>：简单高效，对于限定CPU的环境来说，Serial收集器没有线程交互的开销，专心做垃圾收集。<br><a id="more"></a></p>
-<h2 id="ParNew-收集器（新生代）"><a href="#ParNew-收集器（新生代）" class="headerlink" title="ParNew 收集器（新生代）"></a>ParNew 收集器（新生代）</h2><p>ParNew收集器是Serial收集器的多线程版本,除了使用多线程进行垃圾收集之外,其余行为包括Serial收集器可用的所有控制参数、收集算法、对象分配规则、回收策略等都和Serial收集器完全一样。<br><strong>实际使用场景</strong>：Server模式下的虚拟机中首选的新生代收集器。因为除了Serial收集器外，目前只有它可以与CMS收集器配合工作。Parallel Scavenge收集器无法和CMS配合工作。</p>
-<ul>
-<li><strong>-XX:+UseConcMarkSweepGc</strong> :ParNew收集器也是使用此配置的默认新生代收集器</li>
-<li><strong>-XX:+UserParNewGC</strong>: 此配置强制使用ParNew收集器为新生代收集器</li>
-<li><strong>-XX:ParallelGCThreads</strong>:参数来限制垃圾收集器的线程数。</li>
-</ul>
-<h2 id="Parallel-Scavenge-收集器-新生代"><a href="#Parallel-Scavenge-收集器-新生代" class="headerlink" title="Parallel Scavenge 收集器(新生代)"></a>Parallel Scavenge 收集器(新生代)</h2><p>使用复制算法并且多线程的收集器，和ParNew类似。<br><strong>特点</strong>：Parallel Scavenge收集器的目标是达到一个可控的吞吐量。<br><strong>吞吐量=运行用户代码时间/(运行用户代码时间+垃圾收集时间)</strong><br>自适应调节策略:-XX:+UseAdaptivePolicy 这个参数打开后,不需要手工指定对象年龄等参数细节,动态调整这些参数提供最合适的停顿时间和最大吞吐量。</p>
-<h2 id="Serial-Old收集器（老年代）"><a href="#Serial-Old收集器（老年代）" class="headerlink" title="Serial Old收集器（老年代）"></a>Serial Old收集器（老年代）</h2><p>单线程收集器 使用标记标记-整理算法，主要用于Client模式下的虚拟机使用。</p>
-<h2 id="Parallel-Old-收集器（老年代）"><a href="#Parallel-Old-收集器（老年代）" class="headerlink" title="Parallel Old 收集器（老年代）"></a>Parallel Old 收集器（老年代）</h2><p>多线程使用“标记-整理”短发。JDK1.6中才开始提供。配合Parallel Scavenge使用。</p>
-<h2 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h2><p>是一种以获取最短回收停顿时间为目标的收集器。基于“标记-清除”算法实现。一共分为四个步骤</p>
-<ul>
-<li>初始标记 </li>
-<li>并发标记</li>
-<li>重新标记（为了修正并发标记期间因用户程序继续运行而导致而导致标记产生变动的那一部分对象的标记记录）</li>
-<li>并发清除</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li><p>CMS收集器对CPU资源非常敏感。CMS默认启动的回收线程数是（CPU数量+3）/4,当CPU在4个以上时,并发回收时垃圾手机线程不少于25%的CPU资源,但是当小于4时,CMS对用户的影响就变得更大,影响用户使用。</p>
-</li>
-<li><p>CMS无法处理浮动垃圾可能会出现“Concurrent Mode Failure”失败而导致另一次Full GC的产生。浮动垃圾就是并发清除的时候产生的垃圾。</p>
-</li>
-<li><p>基于“标记-清除”算法那实现的收集器，结束后会产生大量空间碎片。碎片过多会导致即使老年代即使还有很大空间剩余，但是找不到连续的空间，还是会触发Full GC。为了解决这个问题CMS提供了-XX:+UseCMSCompactAtFullConllection开关参数,用于在FullGC时开启内存碎片的合并整理。</p>
-</li>
-</ul>
-<h2 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h2><p>是当今收集器技术发展的最前沿成果之一，G1收集器把整个Java堆划分为多个大小相等的独立区域（Region）,新生代和老年代不再是隔离的。</p>
-<p>特点:</p>
-<ul>
-<li><strong>并行和并发</strong>: G1充分利用多CPU、多核环境下的硬件优势，使用多个CPU来缩短停顿时间。</li>
-<li><strong>分代收集</strong>:G1可以不需要其他收集器配合就可以独立管理整个GC堆。</li>
-<li><strong>空间整合</strong>：基于标记整理算法，从局部上（两个Region之间）是基于复制算法，两种算法都意味着G1运作期间不会产生内存空间碎片。</li>
-<li><strong>可预测的停顿</strong>：G1追求低停顿外，还能建立可预测的停顿时间模型。能让使用者明确之情在一个长度为M毫秒的时间段内，消耗在垃圾收集上的时间不得超过N秒。<br><strong>可预测停顿原因</strong>：G1跟踪各个Region里面的垃圾堆积的价值大小（回收所获得空间大小以及回收所需时间的经验值），在后台维护一个有限列表，每一个根据时间，优先回收价值最大的Region。</li>
-</ul>
+        <p><img src="https://i.loli.net/2019/07/02/5d1af21417e8828921.jpg" alt="1562046852(1).jpg"><br><a id="more"></a></p>
+<h3 id="1、网络协议"><a href="#1、网络协议" class="headerlink" title="1、网络协议"></a>1、网络协议</h3><h4 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h4><h5 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h5><p>OSI采用了分层的结构化技术，共分七层，物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</p>
+<h5 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h5><p>OSI模型比较复杂且学术化，所以我们实际使用的TCP/IP模型，共分4层，链路层、网络层、传输层、应用层。两个模型之间的对应关系如图所示：</p>
+<p><img src="https://i.loli.net/2019/07/01/5d196ac12803a57143.png" alt="模型.png"></p>
+<h5 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h5><p>Transmission Control Protocol/Internet Protocol的简写，中译名为传输控制协议/因特网互联协议，是Internet最基本的协议、Internet国际互联网络的基础，由网络层的IP协议和传输层的TCP协议组成。协议采用了4层的层级结构。然而在很多情况下，它是利用 IP 进行通信时所必须用到的协议群的统称。也就是说，它其实是个协议家族，由很多个协议组成，并且是在不同的层， 是互联网的基础通信架构。</p>
+<p><img src="https://i.loli.net/2019/07/01/5d196c0d3cc7314966.png" alt="协议族.png"></p>
+<h5 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h5><pre><code>在上述表格中，网际协议IP是TCP/IP中非常重要的协议。负责对数据加上IP地址（有发送它的主机的地址（源地址）和接收它的主机的地址（目的地址））和其他的数据以确定传输的目标。
 
+而TCP和UDP都是传输层的协议，传输层主要为两台主机上的应用程序提供端到端的通信。
+
+但是TCP和UDP最不同的地方是，TCP提供了一种可靠的数据传输服务，TCP是面向连接的，也就是说，利用TCP通信的两台主机首先要经历一个建立连接的过程，等到连接建立后才开始传输数据，而且传输过程中采用“带重传的肯定确认”技术来实现传输的可靠性。TCP还采用一种称为“滑动窗口”的方式进行流量控制，发送完成后还会关闭连接。所以TCP要比UDP可靠的多。
+
+UDP（User Datagram Protocol的简称， 中文名是用户数据报协议）是把数据直接发出去，而不管对方是不是在接收，也不管对方是否能接收的了，也不需要接收方确认，属于不可靠的传输，可能会出现丢包现象，实际应用中要求程序员编程验证。
+
+注意：
+我们一些常见的网络应用基本上都是基于TCP和UDP的，这两个协议又会使用网络层的IP协议。但是我们完全可以绕过传输层的TCP和UDP，直接使用IP，比如Linux中LVS，甚至直接访问链路层，比如tcpdump程序就是直接和链路层进行通信的。
+</code></pre><p><img src="https://i.loli.net/2019/07/01/5d197d162e16e43366.png" alt="图.png"><br>上图中，其他一些协议的名称解释，了解即可：<br>ICMP  控制报文协议<br>IGMP  internet组管理协议<br>ARP   地址解析协议<br>RARP 反向地址转化协议 </p>
+<h5 id="地址和端口号"><a href="#地址和端口号" class="headerlink" title="地址和端口号"></a>地址和端口号</h5><p>•    我们常听说 MAC 地址和 IP 地址。MAC地址就是在媒体接入层上使用的地址，也叫物理地址、硬件地址或链路地址，由网络设备制造商生产时写在硬件内部。MAC地址与网络无关，也即无论将带有这个地址的硬件（如网卡、集线器、路由器等）接入到网络的何处，都有相同的MAC地址，它由厂商写在网卡的BIOS里，从理论上讲，除非盗来硬件（网卡），否则是没有办法冒名顶替的。<br>•    IP 地址后者用来识别 TCP/IP 网络中互连的主机和路由器。IP地址基于逻辑，比较灵活，不受硬件限制，也容易记忆。<br>•    在传输层也有这种类似于地址的概念，那就是端口号。端口号用来识别同一台计算机中进行通信的不同应用程序。因此，它也被称为程序地址。<br>•    一台计算机上同时可以运行多个程序。传输层协议正是利用这些端口号识别本机中正在进行通信的应用程序，并准确地将数据传输。</p>
+<h5 id="端口号的确定"><a href="#端口号的确定" class="headerlink" title="端口号的确定"></a>端口号的确定</h5><p>•    标准既定的端口号：这种方法也叫静态方法。它是指每个应用程序都有其指定的端口号。但并不是说可以随意使用任何一个端口号。例如 HTTP、FTP、TELNET 等广为使用的应用协议中所使用的端口号就是固定的。这些端口号被称为知名端口号，分布在 0~1023 之间；除知名端口号之外，还有一些端口号被正式注册，它们分布在 1024~49151 之间，不过这些端口号可用于任何通信用途。<br>•    时序分配法：服务器有必要确定监听端口号，但是接受服务的客户端没必要确定端口号。在这种方法下，客户端应用程序完全可以不用自己设置端口号，而全权交给操作系统进行分配。动态分配的端口号范围在 49152~65535 之间。</p>
+<h5 id="端口号与协议"><a href="#端口号与协议" class="headerlink" title="端口号与协议"></a>端口号与协议</h5><p>•    端口号由其使用的传输层协议决定。因此，不同的传输层协议可以使用相同的端口号。<br>•    此外，那些知名端口号与传输层协议并无关系。只要端口一致都将分配同一种应用程序进行处理。</p>
+<h4 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h4><pre><code>TCP是面向连接的通信协议，通过&lt;u&gt;三次握手&lt;/u&gt;建立连接，通讯完成时要拆除连接，由于TCP是面向连接的所以只能用于端到端的通讯。
+TCP提供的是一种可靠的&lt;u&gt;数据流&lt;/u&gt;服务，采用“带重传的肯定确认”技术来实现传输的可靠性。TCP还采用一种称为“滑动窗口”的方式进行流量控制，所谓窗口实际表示接收能力，用以限制发送方的发送速度。
+如果IP数据包中有已经封好的TCP数据包，那么IP将把它们向‘上’传送到TCP层。TCP将包排序并进行错误检查，同时实现虚电路间的连接。TCP数据包中包括序号和确认，所以未按照顺序收到的包可以被排序，而损坏的包可以被重传。
+TCP将它的信息送到更高层的应用程序，例如Telnet的服务程序和客户程序。应用程序轮流将信息送回TCP层，TCP层便将它们向下传送到IP层，设备驱动程序和物理介质，最后到接收方。
+面向连接的服务（例如&lt;u&gt;Telnet&lt;/u&gt;、&lt;u&gt;FTP&lt;/u&gt;、&lt;u&gt;rlogin&lt;/u&gt;、&lt;u&gt;X Windows&lt;/u&gt;和&lt;u&gt;SMTP&lt;/u&gt;）需要高度的可靠性，所以它们使用了TCP。DNS在某些情况下使用TCP（发送和接收&lt;u&gt;域名&lt;/u&gt;数据库），但使用UDP传送有关单个主机的信息。
+</code></pre><p>#####　TCP三次握手</p>
+<p><img src="https://i.loli.net/2019/07/01/5d1983edbc30a14933.png" alt="三次握手.png"></p>
+<p>SYN：同步序列编号(Synchronize Sequence Numbers)</p>
+<h5 id="TCP的三次握手的漏洞"><a href="#TCP的三次握手的漏洞" class="headerlink" title="TCP的三次握手的漏洞"></a>TCP的三次握手的漏洞</h5><pre><code>但是在TCP三次握手中是有一个缺陷的，就是如果我们利用三次握手的缺陷进行攻击。这个攻击就是**SYN洪泛攻击**。三次握手中有一个第二次握手，服务端向客户端应道请求，应答请求是需要客户端IP的，服务端是需要知道客户端IP的，攻击者就伪造这个IP，往服务器端狂发送第一次握手的内容，当然第一次握手中的客户端IP地址是伪造的，从而服务端忙于进行第二次握手但是第二次握手当然没有结果，所以导致服务器端被拖累，死机。
+当然我们的生活中也有可能有这种例子，一个家境一般的IT男去表白他的女神被拒绝了，理由是他家里没矿，IT男为了报复，采用了洪泛攻击，他请了很多人伪装成有钱人去表白那位追求矿的女神，让女生每次想交往时发现表白的人不见了同时还联系不上了。
+面对这种攻击，有以下的解决方案，最好的方案是防火墙。
+</code></pre><p>面对这种攻击，有以下的解决方案，最好的方案是<strong>防火墙</strong>。</p>
+<p><strong>无效连接监视释放</strong><br>这种方法不停监视所有的连接，包括三次握手的，还有握手一次的，反正是所有的，当达到一定(与)阈值时拆除这些连接，从而释放系统资源。这种方法对于所有的连接一视同仁，不管是正常的还是攻击的，所以这种方式不推荐。</p>
+<p><strong>延缓TCB分配方法</strong><br>一般的做完第一次握手之后，服务器就需要为该请求分配一个TCB（连接控制资源），通常这个资源需要200多个字节。延迟TCB的分配，当正常连接建立起来后再分配TCB则可以有效地减轻服务器资源的消耗。</p>
+<p><strong>使用防火墙</strong><br>防火墙在确认了连接的有效性后，才向内部的服务器（Listener）发起SYN请求，</p>
+<h5 id="TCP四次挥手（分手）"><a href="#TCP四次挥手（分手）" class="headerlink" title="TCP四次挥手（分手）"></a>TCP四次挥手（分手）</h5><pre><code>四次挥手即终止TCP连接，就是指断开一个TCP连接时，需要客户端和服务端总共发送4个包以确认连接的断开。在socket编程中，这一过程由客户端或服务端任一方执行close来触发。
+由于TCP连接是全双工的，因此，每个方向都必须要单独进行关闭，这一原则是当一方完成数据发送任务后，发送一个FIN来终止这一方向的连接，收到一个FIN只是意味着这一方向上没有数据流动了，即不会再收到数据了，但是在这个TCP连接上仍然能够发送数据，直到这一方向也发送了FIN。首先进行关闭的一方将执行主动关闭，而另一方则执行被动关闭。
+</code></pre><p><img src="https://i.loli.net/2019/07/01/5d19a10a93e8417209.png" alt="TCP四次挥手.png"></p>
+<pre><code>客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。
+
+服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。
+
+客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最后的数据）。
+
+服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。
+
+客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。
+
+服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些。
+</code></pre><h5 id="TCP的通讯原理"><a href="#TCP的通讯原理" class="headerlink" title="TCP的通讯原理"></a>TCP的通讯原理</h5><p><strong>Socket套接字</strong><br>    socket 的原意是“插座”，在计算机通信领域，socket 被翻译为“套接字”，它是计算机之间进行通信的一种约定或一种方式。通过 socket 这种约定，一台计算机可以接收其他计算机的数据，也可以向其他计算机发送数据。TCP用主机的IP地址加上主机上的端口号作为TCP连接的端点，这种端点就叫做套接字（socket）。<br>    区分不同应用程序进程间的网络通信和连接，主要有3个参数：通信的目的IP地址、使用的传输层协议(TCP或UDP)和使用的端口号。通过将这3个参数结合起来，与一个“插座”Socket绑定，应用层就可以和传输层通过套接字接口，区分来自不同应用程序进程或网络连接的通信，实现数据传输的并发服务。<br>    套接字对是一个定义该连接的两个端点的四元组：本地IP地址、本地TCP端口号、外地IP地址、外地ＴＣＰ端口号。套接字对唯一标识一个网络上的每个TCP连接。</p>
+<h5 id="TCP缓冲区"><a href="#TCP缓冲区" class="headerlink" title="TCP缓冲区"></a>TCP缓冲区</h5><pre><code>每个TCP的Socket的内核中都有一个发送缓冲区和一个接收缓冲区。现在我们假设用write()方法发送数据，使用 read()方法接收数据。
+write()并不立即向网络中传输数据，而是先将数据写入缓冲区中，再由TCP协议将数据从缓冲区发送到目标机器。一旦将数据写入到缓冲区，函数就可以成功返回，不管它们有没有到达目标机器，也不管它们何时被发送到网络，这些都是TCP协议负责的事情。
+TCP协议独立于 write()函数，数据有可能刚被写入缓冲区就发送到网络，也可能在缓冲区中不断积压，多次写入的数据被一次性发送到网络，这取决于当时的网络情况、当前线程是否空闲等诸多因素，不由程序员控制。
+read()也是如此，也从输入缓冲区中读取数据，而不是直接从网络中读取。
+总得来说，I/O缓冲区在每个TCP套接字中单独存在；I/O缓冲区在创建套接字时自动生成；
+</code></pre>
       
     </div>
 
@@ -538,7 +563,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/垃圾收集器/" rel="tag"># 垃圾收集器</a>
+            <a href="/tags/网络协议/" rel="tag"># 网络协议</a>
           
         </div>
       
@@ -551,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/01/3-2-垃圾回收算/" rel="next" title="3.2 垃圾回收算">
-                <i class="fa fa-chevron-left"></i> 3.2 垃圾回收算
+              <a href="/2019/05/29/6-Google安装head插件/" rel="next" title="6 Google安装head插件">
+                <i class="fa fa-chevron-left"></i> 6 Google安装head插件
               </a>
             
           </div>
@@ -560,10 +585,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/01/3-4-内存分配和回收策略/" rel="prev" title="3.4 内存分配和回收策略">
-                3.4 内存分配和回收策略 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -795,7 +816,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Serial-收集器（新生代）"><span class="nav-number">1.</span> <span class="nav-text">Serial 收集器（新生代）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ParNew-收集器（新生代）"><span class="nav-number">2.</span> <span class="nav-text">ParNew 收集器（新生代）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallel-Scavenge-收集器-新生代"><span class="nav-number">3.</span> <span class="nav-text">Parallel Scavenge 收集器(新生代)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serial-Old收集器（老年代）"><span class="nav-number">4.</span> <span class="nav-text">Serial Old收集器（老年代）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallel-Old-收集器（老年代）"><span class="nav-number">5.</span> <span class="nav-text">Parallel Old 收集器（老年代）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMS收集器"><span class="nav-number">6.</span> <span class="nav-text">CMS收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G1收集器"><span class="nav-number">7.</span> <span class="nav-text">G1收集器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、网络协议"><span class="nav-number">1.</span> <span class="nav-text">1、网络协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#OSI七层模型"><span class="nav-number">1.1.1.</span> <span class="nav-text">OSI七层模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP-IP模型"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP/IP模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-number">1.1.3.</span> <span class="nav-text">TCP/IP协议族</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP和UDP"><span class="nav-number">1.1.4.</span> <span class="nav-text">TCP和UDP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#地址和端口号"><span class="nav-number">1.1.5.</span> <span class="nav-text">地址和端口号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口号的确定"><span class="nav-number">1.1.6.</span> <span class="nav-text">端口号的确定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口号与协议"><span class="nav-number">1.1.7.</span> <span class="nav-text">端口号与协议</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP"><span class="nav-number">1.2.</span> <span class="nav-text">TCP/IP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP的三次握手的漏洞"><span class="nav-number">1.2.1.</span> <span class="nav-text">TCP的三次握手的漏洞</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP四次挥手（分手）"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP四次挥手（分手）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP的通讯原理"><span class="nav-number">1.2.3.</span> <span class="nav-text">TCP的通讯原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP缓冲区"><span class="nav-number">1.2.4.</span> <span class="nav-text">TCP缓冲区</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
